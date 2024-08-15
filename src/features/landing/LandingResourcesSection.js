@@ -1,60 +1,89 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
+import { Box, Typography, Grid, Button, Card, CardMedia, CardContent } from '@mui/material';
+import { styled } from '@mui/system';
+
+const resources = [
+    {
+        title: 'Racial Equity at Duke',
+        image: 'https://duke.edu/assets/img/anti-racism-tile.jpg',
+    },
+    {
+        title: 'Arts at Duke',
+        image: 'https://duke.edu/assets/img/anti-racism-tile.jpg',
+    },
+    {
+        title: 'Coronavirus Response',
+        image: 'https://duke.edu/assets/img/coronavirus-respsonse-tile.jpg',
+    },
+    {
+        title: 'Climate Change at Duke',
+        image: 'https://duke.edu/assets/img/coronavirus-respsonse-tile.jpg',
+    },
+    {
+        title: 'Research at Duke',
+        image: 'https://duke.edu/assets/img/research-tile.jpg',
+    },
+    {
+        title: 'For the Media',
+        image: 'https://duke.edu/assets/img/for-the-media-tile.jpg',
+    },
+    {
+        title: 'For the Media',
+        image: 'https://duke.edu/assets/img/for-the-media-tile.jpg',
+    },
+    {
+        title: 'For the Media',
+        image: 'https://duke.edu/assets/img/for-the-media-tile.jpg',
+    }
+];
+
+const StyledCard = styled(Card)(({ theme }) => ({
+    border: '3px solid #ddd',
+    boxShadow: 'none',
+    '&:hover': {
+        boxShadow: theme.shadows[3],
+    },
+    backgroundColor: '#EEEDE0'
+}));
+
+const StyledCardMedia = styled(CardMedia)({
+    height: 190,
+    width: 200
+});
+
+const StyledCardContent = styled(CardContent)({
+    padding: '8px 2px',
+    textAlign: 'center',
+});
 
 const ResourcesSection = () => {
-    const resources = [
-        { count: 150, title: 'Nazarbayev University', img: 'https://vlast.kz/media/pages/8z/17103992352mfah_1600x900.jpg' },
-        { count: 200, title: 'Astana IT University', img: 'https://astanait.edu.kz/wp-content/uploads/2020/11/DSC01511-scaled.jpg' },
-        { count: 10, title: 'Massachusetts Institute of Technology', img: 'https://news.mit.edu/sites/default/files/images/202304/mit-entrance-aerial-view-00_0.jpg' },
-        { count: 120, title: 'Abai University', img: 'https://upload.wikimedia.org/wikipedia/commons/8/84/KazNPU_imeni_Abaya.JPG' },
-        { count: 4, title: 'Princeton University', img: 'https://www.princeton.edu//sites/default/files/images/2017/06/20060425_NassauHall_JJ_IMG_5973.jpg' },
-
-    ];
-
     return (
-        <Box sx={{ backgroundColor: '#f7f7f7', padding: 4 }}>
+        <Box mt={4} >
             <Grid container spacing={4}>
-                {/* Левая колонка */}
-                <Grid item xs={12} md={4}>
-                    {/*<Typography variant="h4" sx={{ fontWeight: '400' }}>*/}
-                    {/*    Далее*/}
-                    {/*</Typography>*/}
-                    <Button variant="outlined" sx={{ mt: 2 }}>
-                        Подробнее
-                    </Button>
+                <Grid item xs={12} md={6} style={{ backgroundColor: '#BEBFD0' }}>
+                    <Box ml={2} mb={4} display="flex" flexDirection="column" alignItems="flex-start">
+                        <Typography variant="h2" style={{color: '#0A106E'}}>Up Next</Typography>
+                        <Button variant="outlined" color="primary" style={{ marginTop: '16px', color: '#0A106E'}}>
+                            More from Events at Duke
+                        </Button>
+                    </Box>
                 </Grid>
-
-                {/* Правая колонка */}
-                <Grid item xs={12} md={8}>
-                    <Typography variant="h4" sx={{  fontWeight: '400' }}>
-                        Успешные поступления 2024
-                    </Typography>
-
-                    <Grid container spacing={2} sx={{ mt: 2 }}>
+                <Grid item xs={12} md={6} style={{ backgroundColor: 'rgb(241, 242, 243)', color: '#0A106E' }}>
+                    <Typography variant="h2" ml={1} mb={2}>Resources</Typography>
+                    <Grid container spacing={0.5} mb={4}>
                         {resources.map((resource, index) => (
-                            <Grid item xs={12} sm={6} md={4} key={index}>
-                                <Card sx={{ height: '100%' }}>
-                                    <CardMedia
-                                        component="img"
-                                        height="140"
-                                        image={resource.img}
+                            <Grid item xs={12} sm={3} key={index} display="flex" justifyContent="center">
+                                <StyledCard>
+                                    <StyledCardMedia
+                                        image={resource.image}
                                         alt={resource.title}
                                     />
-                                    <CardContent>
-                                        <Typography variant="body1" sx={{ fontWeight: '400' }}>
+                                    <StyledCardContent>
+                                        <Typography variant="subtitle1" color="primary"  style={{color: '#0A106E'}}>
                                             {resource.title}
                                         </Typography>
-                                        <Typography variant="body1" sx={{ fontWeight: '400' }}>
-                                            {resource.count} успешных поступлений
-                                        </Typography>
-                                    </CardContent>
-                                </Card>
+                                    </StyledCardContent>
+                                </StyledCard>
                             </Grid>
                         ))}
                     </Grid>

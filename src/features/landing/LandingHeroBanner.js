@@ -1,102 +1,87 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
+import { Box, Typography, Button, Hidden } from '@mui/material';
+import { styled } from '@mui/system';
 
-const Part1 = () => {
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+const BackgroundImage = styled(Box)(({ theme }) => ({
+    height: '60vh',
+    backgroundImage: 'url("https://spotlight.duke.edu/wp-content/uploads/2024/06/duke-summer24@2x.jpg")', // Replace with your image path
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    [theme.breakpoints.down('md')]: {
+        height: '40vh',
+    },
+}));
 
+const Overlay = styled(Box)(({ theme }) => ({
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+}));
+
+const TextOverlay = styled(Typography)(({ theme }) => ({
+    color: 'white',
+    fontWeight: 'bold',
+    zIndex: 1,
+    [theme.breakpoints.down('md')]: {
+        fontSize: '2rem',
+    },
+    [theme.breakpoints.up('md')]: {
+        fontSize: '4rem',
+    },
+}));
+
+const NavigationBar = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: '#002E6D',
+    padding: theme.spacing(1),
+}));
+
+const NavButton = styled(Button)(({ theme }) => ({
+    color: 'white',
+    [theme.breakpoints.down('md')]: {
+        fontSize: '0.8rem',
+    },
+    [theme.breakpoints.up('md')]: {
+        fontSize: '1rem',
+    },
+}));
+
+const HeroSection = () => {
     return (
-        <Box
-            sx={{
-                width: '100%',
-                height: '60vh',
-                backgroundImage: 'url(https://spotlight.duke.edu/wp-content/uploads/2024/06/duke-summer24@2x.jpg)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'flex-end',
-                alignItems: 'center',
-                color: '#fff',
-                textAlign: 'center',
-                p: 2,
-            }}
-        >
-            <Container maxWidth="lg">
-                <Grid
-                    container
-                    justifyContent="center"
-                    sx={{
-                        mb: isMobile ? 2 : 4,
-                    }}
-                >
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            flexDirection: isMobile ? 'column' : 'row',
-                            gap: isMobile ? 1 : 0,
-                            boxShadow: isMobile ? 'none' : theme.shadows[4],
-                            width: isMobile ? '100%' : '60%', // Ширина блока с кнопками в немобильной версии
-                        }}
-                    >
-                        <Button
-                            sx={{
-                                borderRadius: isMobile ? 1 : '4px 0 0 4px',
-                                width: isMobile ? '100%' : '25%',
-                            }}
-                            fullWidth={isMobile}
-                            variant="contained"
-                            color="primary"
-                            size={isMobile ? 'medium' : 'large'}
+        <Box>
+            <BackgroundImage>
+                <Overlay />
+                <TextOverlay variant="h2">
+                    This is Duke
+                </TextOverlay>
+            </BackgroundImage>
+            <Hidden mdDown>
+                <NavigationBar>
+                    {['Duke Health', 'Libraries', 'Giving to Duke', 'Athletics', 'About'].map((text, index, arr) => (
+                        <Box
+                            key={text}
+                            display="flex"
+                            alignItems="center"
+                            borderRight={index !== arr.length - 1 ? 1 : 0}
+                            borderColor="white"
+                            paddingRight={2}
+                            marginRight={2}
                         >
-                            Раздел 1
-                        </Button>
-                        <Button
-                            sx={{
-                                borderRadius: 0,
-                                width: isMobile ? '100%' : '25%',
-                            }}
-                            fullWidth={isMobile}
-                            variant="contained"
-                            color="primary"
-                            size={isMobile ? 'medium' : 'large'}
-                        >
-                            Раздел 2
-                        </Button>
-                        <Button
-                            sx={{
-                                borderRadius: 0,
-                                width: isMobile ? '100%' : '25%',
-                            }}
-                            fullWidth={isMobile}
-                            variant="contained"
-                            color="primary"
-                            size={isMobile ? 'medium' : 'large'}
-                        >
-                            Раздел 3
-                        </Button>
-                        <Button
-                            sx={{
-                                borderRadius: isMobile ? 1 : '0 4px 4px 0',
-                                width: isMobile ? '100%' : '25%',
-                            }}
-                            fullWidth={isMobile}
-                            variant="contained"
-                            color="primary"
-                            size={isMobile ? 'medium' : 'large'}
-                        >
-                            Раздел 4
-                        </Button>
-                    </Box>
-                </Grid>
-            </Container>
+                            <NavButton>
+                                {text}
+                            </NavButton>
+                        </Box>
+                    ))}
+                </NavigationBar>
+            </Hidden>
         </Box>
     );
 };
 
-export default Part1;
+export default HeroSection;

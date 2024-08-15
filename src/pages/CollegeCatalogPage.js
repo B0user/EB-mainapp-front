@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import universities from './univer.json'
+import React, { useState } from 'react';
+import universities from './univer.json';
 import { useNavigate } from 'react-router-dom';
 
 import Box from '@mui/material/Box';
@@ -28,47 +28,13 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import ImportExportIcon from '@mui/icons-material/ImportExport';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 
-
 import Divider from '@mui/material/Divider';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
-import Header from '../features/landing/LandingHeader'
-
-// const universities = [
-//     { id: 1, name: 'Harvard University', country: 'USA', type: 'Private', image: 'https://www.harvard.edu/wp-content/uploads/2021/02/091520_Stock_KS_025.jpeg?resize=1200,630',  qsRanking: 3,
-//         language: 'English',
-//         grants: 'Yes',
-//         costOfLiving: 20000,
-//         dualDegree: 'Yes',
-//         tuition: 50000},
-//     {  id: 2, name: 'University of Oxford', country: 'UK', type: 'Public', image: 'https://cdn.britannica.com/03/117103-050-F4C2FC83/view-University-of-Oxford-England-Oxfordshire.jpg',  qsRanking: 4,
-//         language: 'English',
-//         grants: 'Уеs',
-//         costOfLiving: 15000,
-//         dualDegree: 'No',
-//         tuition: 40000 },
-//     {  id: 3, name: 'MIT', country: 'USA', type: 'Private', image: 'https://www.ivywise.com/core/wp-content/uploads/2020/04/MIT.jpg',  qsRanking: 1,
-//         language: 'English',
-//         grants: 'Yes',
-//         costOfLiving: 18000,
-//         dualDegree: 'Yes',
-//         tuition: 55000 },
-//     { id: 4, name: 'Cambridge University', country: 'UK', type: 'Public', image: 'https://www.royce.ac.uk/content/uploads/2017/05/Cambridge3.jpg',  qsRanking: 2,
-//         language: 'English',
-//         grants: 'Yes',
-//         costOfLiving: 17000,
-//         dualDegree: 'No',
-//         tuition: 42000 },
-//
-// ];
-
-
-
-
+import Header from '../features/landing/LandingHeader';
 
 const CollegeCatalogPage = () => {
-
     const navigate = useNavigate();
 
     const [searchTerm, setSearchTerm] = useState('');
@@ -130,10 +96,7 @@ const CollegeCatalogPage = () => {
             <Divider sx={{ mb: 2 }} />
             <FormControl fullWidth sx={{ marginBottom: 2 }}>
                 <InputLabel>Страна</InputLabel>
-                <Select
-                    value={filterCountry}
-                    onChange={handleCountryChange}
-                >
+                <Select value={filterCountry} onChange={handleCountryChange}>
                     <MenuItem value=''>Все страны</MenuItem>
                     <MenuItem value='USA'>США</MenuItem>
                     <MenuItem value='UK'>Великобритания</MenuItem>
@@ -141,10 +104,7 @@ const CollegeCatalogPage = () => {
             </FormControl>
             <FormControl fullWidth sx={{ marginBottom: 2 }}>
                 <InputLabel>Тип</InputLabel>
-                <Select
-                    value={filterType}
-                    onChange={handleTypeChange}
-                >
+                <Select value={filterType} onChange={handleTypeChange}>
                     <MenuItem value=''>Все типы</MenuItem>
                     <MenuItem value='Public'>Государственный</MenuItem>
                     <MenuItem value='Private'>Частный</MenuItem>
@@ -159,14 +119,11 @@ const CollegeCatalogPage = () => {
                 valueLabelDisplay="auto"
                 min={1}
                 max={100}
-                sx={{ marginBottom: 2 }}
+                sx={{ marginBottom: 2, color: '#003366' }}
             />
             <FormControl fullWidth sx={{ marginBottom: 2 }}>
                 <InputLabel>Язык обучения</InputLabel>
-                <Select
-                    value={filterLanguage}
-                    onChange={handleLanguageChange}
-                >
+                <Select value={filterLanguage} onChange={handleLanguageChange}>
                     <MenuItem value=''>Все языки</MenuItem>
                     <MenuItem value='English'>Английский</MenuItem>
                     {/* Add more languages as needed */}
@@ -191,7 +148,7 @@ const CollegeCatalogPage = () => {
                 valueLabelDisplay="auto"
                 min={0}
                 max={50000}
-                sx={{ marginBottom: 2 }}
+                sx={{ marginBottom: 2, color: '#003366' }}
             />
             <FormControlLabel
                 control={
@@ -212,126 +169,136 @@ const CollegeCatalogPage = () => {
                 valueLabelDisplay="auto"
                 min={0}
                 max={60000}
-                sx={{ marginBottom: 2 }}
+                sx={{ marginBottom: 2, color: '#003366' }}
             />
         </Box>
     );
 
     return (
         <>
-        <Header />
-        <Box sx={{ display: 'flex', padding: 4 }}>
-            {/* Sidebar */}
-            {!isMobile && (
-                <Box sx={{ width: 250, mr: 4 }}>
-                    {drawerContent}
-                </Box>
-            )}
-
-            {/* Content */}
-            <Box sx={{ flexGrow: 1 }}>
-                {isMobile && (
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
-                        <IconButton
-                            color="primary"
-                            aria-label="open drawer"
-                            edge="start"
-                            onClick={handleDrawerToggle}
-                        >
-                            <TuneIcon />
-                        </IconButton>
+            <Header />
+            <Box sx={{ display: 'flex', padding: 4 }}>
+                {/* Sidebar */}
+                {!isMobile && (
+                    <Box sx={{ width: 250, mr: 4 }}>
+                        {drawerContent}
                     </Box>
                 )}
 
-                <Drawer
-                    anchor="left"
-                    open={isDrawerOpen}
-                    onClose={handleDrawerToggle}
-                    ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
-                    }}
-                >
-                    {drawerContent}
-                </Drawer>
+                {/* Content */}
+                <Box sx={{ flexGrow: 1 }}>
+                    {isMobile && (
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
+                            <IconButton
+                                color="primary"
+                                aria-label="open drawer"
+                                edge="start"
+                                onClick={handleDrawerToggle}
+                            >
+                                <TuneIcon />
+                            </IconButton>
+                        </Box>
+                    )}
 
+                    <Drawer
+                        anchor="left"
+                        open={isDrawerOpen}
+                        onClose={handleDrawerToggle}
+                        ModalProps={{
+                            keepMounted: true, // Better open performance on mobile.
+                        }}
+                    >
+                        {drawerContent}
+                    </Drawer>
 
-                <TextField
-                    fullWidth
-                    label="Поиск по названию"
-                    variant="outlined"
-                    value={searchTerm}
-                    onChange={handleSearchChange}
-                    sx={{ marginBottom: 4 }}
-                />
+                    <TextField
+                        fullWidth
+                        label="Поиск по названию"
+                        variant="outlined"
+                        value={searchTerm}
+                        onChange={handleSearchChange}
+                        sx={{ marginBottom: 4 }}
+                    />
 
-                <Grid container spacing={3}>
-                    {filteredUniversities.map((university, index) => (
-                        <Grid item xs={12} md={4} key={index}>
-                            <Card sx={{ height: '450px', display: 'flex', flexDirection: 'column' }}>
-                                <CardMedia
-                                    component="img"
-                                    image={university.image}
-                                    alt={university.name}
-                                    sx={{ height: 140 }}
-                                />
-                                <CardContent sx={{ flexGrow: 1 }}>
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-                                        {university.name}
-                                    </Typography>
+                    <Grid container spacing={3}>
+                        {filteredUniversities.map((university, index) => (
+                            <Grid item xs={12} key={index}>
+                                <Box sx={{ maxWidth: { sm: '900px' }, mx: { sm: 'auto' } }}>
+                                    <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'center', sm: 'stretch' }, minHeight: '250px' }}>
+                                        <CardMedia
+                                            component="img"
+                                            image={university.image}
+                                            alt={university.name}
+                                            sx={{
+                                                width: { xs: '100%', sm: 400 },
+                                                height: { xs: 250, sm: 'auto' },
+                                                maxHeight: { sm: 400 },
+                                                objectFit: 'cover',
+                                                cursor: 'pointer'
+                                            }}
+                                            onClick={() => navigate(`/colleges/${university.id}`)}
+                                        />
+                                        <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                                            <CardContent>
+                                                <Typography
+                                                    variant="h6"
+                                                    sx={{ fontWeight: 'bold', color: '#003366', cursor: 'pointer' }}
+                                                    onClick={() => navigate(`/colleges/${university.id}`)}
+                                                >
+                                                    {university.name}
+                                                </Typography>
 
-                                    <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
-                                        <StarIcon sx={{ mr: 1, color: 'gold' }} />
-                                        <Typography variant="body2" color="text.secondary" sx={{ fontSize: '1rem' }}>
-                                            QS Рейтинг: {university.qsRanking}
-                                        </Typography>
-                                    </Box>
+                                                <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
+                                                    <StarIcon sx={{ mr: 1 }} />
+                                                    <Typography variant="body2" color="text.secondary" sx={{ fontSize: '1rem' }}>
+                                                        QS Рейтинг: {university.qsRanking}
+                                                    </Typography>
+                                                </Box>
 
-                                    <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
-                                        <LanguageIcon sx={{ mr: 1, color: 'blue' }} />
-                                        <Typography variant="body2" color="text.secondary" sx={{ fontSize: '1rem' }}>
-                                            Язык обучения: {university.language}
-                                        </Typography>
-                                    </Box>
+                                                <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
+                                                    <LanguageIcon sx={{ mr: 1}} />
+                                                    <Typography variant="body2" color="text.secondary" sx={{ fontSize: '1rem' }}>
+                                                        Язык обучения: {university.language}
+                                                    </Typography>
+                                                </Box>
 
-                                    <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
-                                        <SchoolIcon sx={{ mr: 1, color: 'green' }} />
-                                        <Typography variant="body2" color="text.secondary" sx={{ fontSize: '1rem' }}>
-                                            Гранты/Стипендии: {university.grants}
-                                        </Typography>
-                                    </Box>
+                                                <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
+                                                    <SchoolIcon sx={{ mr: 1}} />
+                                                    <Typography variant="body2" color="text.secondary" sx={{ fontSize: '1rem' }}>
+                                                        Гранты/Стипендии: {university.grants}
+                                                    </Typography>
+                                                </Box>
 
-                                    <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
-                                        <AttachMoneyIcon sx={{ mr: 1, color: 'green' }} />
-                                        <Typography variant="body2" color="text.secondary" sx={{ fontSize: '1rem' }}>
-                                            Стоимость проживания: {university.costOfLiving}$
-                                        </Typography>
-                                    </Box>
+                                                <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
+                                                    <AttachMoneyIcon sx={{ mr: 1}} />
+                                                    <Typography variant="body2" color="text.secondary" sx={{ fontSize: '1rem' }}>
+                                                        Стоимость проживания: {university.costOfLiving}$
+                                                    </Typography>
+                                                </Box>
 
-                                    <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
-                                        <ImportExportIcon sx={{ mr: 1, color: 'orange' }} />
-                                        <Typography variant="body2" color="text.secondary" sx={{ fontSize: '1rem' }}>
-                                            Программа двойных дипломов: {university.dualDegree}
-                                        </Typography>
-                                    </Box>
+                                                <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
+                                                    <ImportExportIcon sx={{ mr: 1 }} />
+                                                    <Typography variant="body2" color="text.secondary" sx={{ fontSize: '1rem' }}>
+                                                        Программа двойных дипломов: {university.dualDegree}
+                                                    </Typography>
+                                                </Box>
 
-                                    <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
-                                        <MonetizationOnIcon sx={{ mr: 1, color: 'gold' }} />
-                                        <Typography variant="body2" color="text.secondary" sx={{ fontSize: '1rem' }}>
-                                            Стоимость обучения за год: {university.tuition}$
-                                        </Typography>
-                                    </Box>
-                                </CardContent>
-                                <Box sx={{ padding: 2 }}>
-                                    <Button variant="contained" color="primary" fullWidth  onClick={() => navigate(`/colleges/${university.id}`)}>
-                                        Подробнее
-                                    </Button>
+                                                <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
+                                                    <MonetizationOnIcon sx={{ mr: 1 }} />
+                                                    <Typography variant="body2" color="text.secondary" sx={{ fontSize: '1rem' }}>
+                                                        Стоимость обучения за год: {university.tuition}$
+                                                    </Typography>
+                                                </Box>
+                                            </CardContent>
+
+                                        </Box>
+                                    </Card>
                                 </Box>
-                            </Card>
-                        </Grid>
-                    ))}
-                </Grid>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Box>
             </Box>
-        </Box>
         </>
     );
 }

@@ -1,52 +1,47 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
-import Divider from '@mui/material/Divider';
+import { Box, Typography, Button, Grid, Divider, Link } from '@mui/material';
+import { styled } from '@mui/system';
+
+const NewsImage = styled('img')({
+    width: '90%',
+    borderRadius: '6px',
+    border: '5px solid #ccc',
+});
 
 const NewsSection = () => {
     return (
-        <Box sx={{ padding: 3 }}>
-            <Typography variant="h4" sx={{ fontWeight: '500'}}>
-                Заголовок <span style={{ color: '#d4a12e' }}>13 АВГУСТА</span>
-            </Typography>
-
-            <Divider sx={{ my: 2 }} />
-
-            <Grid container spacing={4}>
-                <Grid item xs={12} md={6}>
-                    <Box
-                        component="img"
-                        src="https://www.studylab.ru/upload/Articles/image/big/86946b2e115270a117a1a9e8f73cca3e.jpeg"
-                        alt="News Image"
-                        sx={{ width: '100%', borderRadius: 1 }}
-                    />
-                    <Typography variant="h6" sx={{ mt: 2 }}>
-                        Университет Англии
-                    </Typography>
+        <Box mb={8} mt={4} px={2}>
+            <Box display="flex" justifyContent="space-between" alignItems="center" width="90%" px={2}>
+                <Typography variant="h3">
+                    Duke <span style={{ color: '#FF9900' }}>TODAY</span>
+                </Typography>
+                <Button variant="outlined" color="primary" style={{ borderColor: '#ccc' }}>
+                    Working@Duke
+                </Button>
+            </Box>
+            <Divider style={{ margin: '16px 0' }} />
+            <Grid container spacing={4} justifyContent="center">
+                <Grid item xs={12} md={5}>
+                    <Box display="flex" justifyContent="center">
+                        <NewsImage src="https://duke.edu/assets/img/dukexml/MRI%2520with%2520brain%2520tumor%2520Full-width%2520Image-187.jpg" alt="News" />
+                    </Box>
                 </Grid>
-
-                <Grid item xs={12} md={6}>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                        <Typography variant="body1" sx={{ mb: 2, fontWeight: 'bold', color: '#555' }}>
-                            Американские Университеты: подборка лучших университетов Америки
-                        </Typography>
-                        <Divider />
-                        <Typography variant="body1" sx={{ my: 2, fontWeight: 'bold', color: '#555' }}>
-                            Зимние документы: о важном, сроки и списки
-                        </Typography>
-                        <Divider />
-                        <Typography variant="body1" sx={{ my: 2, fontWeight: 'bold', color: '#555' }}>
-                            IELTS: все о международном экзамене
-                        </Typography>
-                        <Divider />
-                        <Typography variant="body1" sx={{ my: 2, fontWeight: 'bold', color: '#555' }}>
-                            Nazarbayev University: поступление в 2025 году
-                        </Typography>
-                        <Divider sx={{ my: 2 }} />
-                        <Button variant="contained" color="primary" sx={{ alignSelf: 'flex-end', mt: 'auto', borderRadius: '20px', paddingX: 3 }}>
-                            Больше новостей
+                <Grid item xs={12} md={5} display="flex" flexDirection="column" justifyContent="center">
+                    <Box mt={2}>
+                        {['HackBio: A Taste of Careers in Science', 'Duke 100 Trailblazer: Rosa Gonzalez-Guarda', 'Duke Experts on How to Survive Severe Heat', 'Disability at Duke, From Academics to Advocacy'].map((text, index) => (
+                            <Box key={index} mb={index < 3 ? 2 : 0}>
+                                <Typography variant="body1">
+                                    <Link href="#" underline="none" color="inherit" fontSize="15px">
+                                        {text}
+                                    </Link>
+                                </Typography>
+                                {index < 3 && <Divider style={{ margin: '8px 0' }} />}
+                            </Box>
+                        ))}
+                    </Box>
+                    <Box mt={4} display="flex" justifyContent="center">
+                        <Button variant="outlined" color="primary" style={{ borderColor: '#ccc' }}>
+                            More News from Duke Today
                         </Button>
                     </Box>
                 </Grid>
