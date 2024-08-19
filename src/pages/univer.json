@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "name": "Harvard University",
+    "country": "USA",
+    "type": "Private",
+    "image": "https://www.harvard.edu/wp-content/uploads/2021/02/091520_Stock_KS_025.jpeg?resize=1200,630",
+    "qsRanking": 3,
+    "language": "English",
+    "grants": "Yes",
+    "costOfLiving": 20000,
+    "dualDegree": "Yes",
+    "tuition": 50000
+  },
+  {
+    "id": 2,
+    "name": "University of Oxford",
+    "country": "UK",
+    "type": "Public",
+    "image": "https://cdn.britannica.com/03/117103-050-F4C2FC83/view-University-of-Oxford-England-Oxfordshire.jpg",
+    "qsRanking": 4,
+    "language": "English",
+    "grants": "Yes",
+    "costOfLiving": 15000,
+    "dualDegree": "No",
+    "tuition": 40000
+  },
+  {
+    "id": 3,
+    "name": "MIT",
+    "country": "USA",
+    "type": "Private",
+    "image": "https://www.ivywise.com/core/wp-content/uploads/2020/04/MIT.jpg",
+    "qsRanking": 1,
+    "language": "English",
+    "grants": "Yes",
+    "costOfLiving": 18000,
+    "dualDegree": "Yes",
+    "tuition": 55000
+  },
+  {
+    "id": 4,
+    "name": "Cambridge University",
+    "country": "UK",
+    "type": "Public",
+    "image": "https://www.royce.ac.uk/content/uploads/2017/05/Cambridge3.jpg",
+    "qsRanking": 2,
+    "language": "English",
+    "grants": "Yes",
+    "costOfLiving": 17000,
+    "dualDegree": "No",
+    "tuition": 42000
+  }
+]
