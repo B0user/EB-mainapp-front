@@ -19,7 +19,7 @@ const ProblemBlock = () => {
 
     return (
         <div className="problem-block">
-            <h2>ПОСЛЕДСТВИЯ</h2>
+            <p style={{fontSize: '24px', letterSpacing: '0.35rem', marginBottom: '5rem'}}>ПОСЛЕДСТВИЯ</p>
             <div className="problem-content">
                 <div className="problem-image-container">
                     <img src="edubridge_cons.png" alt="Problem Illustration" className="problem-image" />

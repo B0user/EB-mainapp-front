@@ -1,7 +1,7 @@
 .rotating-text-wrapper {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
 }
 
 .parent-container {
@@ -10,7 +10,8 @@
     justify-content: center;
     align-items: center;
     height: 70vh; /* Центрирование по вертикали */
-    background-color: #f0f0f0; /* Опционально: можно добавить фон */
+    background-color: #fffef6;
+    padding-bottom: 20px;
 }
 
 .centered-text {
@@ -22,8 +23,8 @@
 
 .rotating-text-circle {
     position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     animation: rotate 70s linear infinite;
     display: flex;
     justify-content: center;

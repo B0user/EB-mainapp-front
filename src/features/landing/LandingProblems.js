@@ -18,8 +18,8 @@ const ProblemBlock = () => {
     ];
 
     return (
-        <div className="problem-block">
-            <h2>ПРОБЛЕМА</h2>
+        <div id="problems" className="problem-block-prblm">
+            <p style={{fontSize: '24px', letterSpacing: '0.35rem', marginBottom: '5rem'}}>ПРОБЛЕМА</p>
             <div className="problem-content">
                 <div className="problem-image-container">
                     <img src="edubridge_prblms.png" alt="Problem Illustration" className="problem-image" />
