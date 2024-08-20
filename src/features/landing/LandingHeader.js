@@ -86,7 +86,7 @@ const ResponsiveHeader = () => {
                                     <Typography variant="h6" style={{ fontSize: '1.5rem', letterSpacing: '0.4rem', fontFamily: 'Web Serveroff, sans-serif'}}>
                                         EDUBRIDGE
                                     </Typography>
-                                    <Typography variant="subtitle1" style={{ fontSize: '1.1rem', letterSpacing: '0.25rem', fontFamily: 'Web Serveroff, sans-serif', marginBottom: '30px' }}>
+                                    <Typography variant="subtitle1" style={{ fontSize: '1.1 rem', letterSpacing: '0.25rem', fontFamily: 'Web Serveroff, sans-serif', marginBottom: '30px' }}>
                                         ПЛАТФОРМА
                                     </Typography>
                                 </div>
