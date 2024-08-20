@@ -12,9 +12,7 @@ const LandingBlock = () => {
                 <div className="landing-text">
                     Ваш гид в запутанном мире образования
                 </div>
-                <a href="#problems">
-                <button  style={{height: '50px', borderRadius: '25px', width: '200px', border: '0', marginTop: '50px', letterSpacing: '0.4rem', fontSize:'17px'}}>ДАЛЕЕ</button>
-                </a>
+
                 </div>
         </div>
     );
