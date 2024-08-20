@@ -10,7 +10,7 @@ const MapWidget = () => {
             />
             <p style={{ marginTop: "20px", fontSize: "18px" }}>
                 Адрес: Астана, Улица Туркестан, 16<br/>
-                2gis: https://go.2gis.com/qrnhh
+                <a href="https://go.2gis.com/qrnhh">2gis: https://go.2gis.com/qrnhh</a>
             </p>
         </div>
     );
