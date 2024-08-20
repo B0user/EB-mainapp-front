@@ -67,7 +67,7 @@ const ResponsiveHeader = () => {
     );
 
     return (
-            <AppBar position="static" style={{ backgroundColor: 'white', boxShadow: 'none' }}>
+            <AppBar position="static" style={{ backgroundColor: 'white', boxShadow: 'none', paddingTop: '30px' }}>
                 <Toolbar>
                     <Hidden mdUp>
                         <Grid container alignItems="center">
@@ -83,10 +83,10 @@ const ResponsiveHeader = () => {
                             </Grid>
                             <Grid item xs>
                                 <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', color: 'black' }}>
-                                    <Typography variant="h6" style={{ fontSize: '1.25rem', fontWeight: 'bold', letterSpacing: '0.1rem' }}>
+                                    <Typography variant="h6" style={{ fontSize: '1.5rem', letterSpacing: '0.4rem', fontFamily: 'Web Serveroff, sans-serif'}}>
                                         EDUBRIDGE
                                     </Typography>
-                                    <Typography variant="subtitle1" style={{ fontSize: '0.875rem', letterSpacing: '0.15rem' }}>
+                                    <Typography variant="subtitle1" style={{ fontSize: '1.1rem', letterSpacing: '0.25rem', fontFamily: 'Web Serveroff, sans-serif', marginBottom: '30px' }}>
                                         ПЛАТФОРМА
                                     </Typography>
                                 </div>
