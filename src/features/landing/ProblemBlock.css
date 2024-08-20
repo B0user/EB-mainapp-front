@@ -1,0 +1,55 @@
+.problem-block {
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 70px;
+}
+
+.problem-block h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    padding-bottom: 80px;
+}
+
+.problem-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px; /* Отступ между изображением и списком проблем */
+}
+
+.problem-image-container {
+    flex-shrink: 0; /* Изображение не сжимается */
+}
+
+.problem-image {
+    width: 90px; /* Установите нужную ширину для изображения */
+    height: auto;
+}
+
+.problem-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 60px; /* Отступы между проблемами */
+}
+
+.cons-text-particles{
+    font-size: 14px;
+}
+
+.problem-item {
+    display: flex;
+    align-items: center;
+  /* Отступ между эмодзи и текстом */
+}
+
+.problem-emoji {
+    font-size: 36px;
+}
+
+.problem-item p {
+    font-size: 18px;
+    color: #555;
+    margin: 0;
+}

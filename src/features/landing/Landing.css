@@ -1,0 +1,72 @@
+.landing-block {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.landing-image-container {
+    margin-bottom: 20px;
+    padding-bottom: 100px;
+    padding-top: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-image {
+    width: 50%;
+    max-width: 300px;
+    position: relative;
+    z-index: 1;
+    animation: moveUpDown 3s ease-in-out infinite;
+}
+
+.landing-shadow {
+    position: absolute;
+    bottom: 40px; /* Корректируйте позицию в зависимости от желаемого эффекта */
+    width: 60%;
+    right: 90px;
+    max-width: 90px;
+    height: 50px;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.1 ) 0%, rgba(0, 0, 0, 0) 70%);
+    z-index: 0;
+    animation: scaleShadow 3s ease-in-out infinite;
+    transition: transform 0.3s ease-in-out;
+}
+
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-40px);
+    }
+}
+
+@keyframes scaleShadow {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+}
+
+
+.landing-text {
+    font-size: 18px;
+    color: #333;
+}
+
+.landing-text-container {
+    background-color: #f0f0f0; /* Серый фон */
+    padding: 10px;
+    border-radius: 8px; /* Сглаженные углы, если нужно */
+    width: 100%;
+    max-width: 400px; /* Максимальная ширина текста */
+}
