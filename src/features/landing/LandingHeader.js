@@ -67,37 +67,46 @@ const ResponsiveHeader = () => {
     );
 
     return (
-        <div>
-            <AppBar position="static" style={{ backgroundColor: '#002E6D' }}>
+            <AppBar position="static" style={{ backgroundColor: 'white', boxShadow: 'none' }}>
                 <Toolbar>
                     <Hidden mdUp>
                         <Grid container alignItems="center">
                             <Grid item>
                                 <IconButton
-                                    color="inherit"
+                                    color="silver"
                                     aria-label="open drawer"
                                     edge="start"
                                     onClick={handleDrawerToggle}
                                 >
-                                    <MenuIcon />
+                                    {/*<MenuIcon />*/}
                                 </IconButton>
                             </Grid>
-                            <Grid item>
-                                <Typography variant="h6" style={{ marginLeft: 10 }}>
-                                    Duke
-                                </Typography>
-                            </Grid>
                             <Grid item xs>
-                                <Search>
-                                    <SearchIconWrapper>
-                                        <SearchIcon />
-                                    </SearchIconWrapper>
-                                    <StyledInputBase
-                                        placeholder="Search…"
-                                        inputProps={{ 'aria-label': 'search' }}
-                                    />
-                                </Search>
+                                <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', color: 'black' }}>
+                                    <Typography variant="h6" style={{ fontSize: '1.25rem', fontWeight: 'bold', letterSpacing: '0.1rem' }}>
+                                        EDUBRIDGE
+                                    </Typography>
+                                    <Typography variant="subtitle1" style={{ fontSize: '0.875rem', letterSpacing: '0.15rem' }}>
+                                        ПЛАТФОРМА
+                                    </Typography>
+                                </div>
                             </Grid>
+                            {/*<Grid item>*/}
+                            {/*    /!*<Typography variant="h6" style={{ marginLeft: 10 }}>*!/*/}
+                            {/*    /!*    EDUBRIDGE*!/*/}
+                            {/*    /!*</Typography>*!/*/}
+                            {/*</Grid>*/}
+                            {/*<Grid item xs>*/}
+                            {/*    /!*<Search>*!/*/}
+                            {/*    /!*    <SearchIconWrapper>*!/*/}
+                            {/*    /!*        <SearchIcon />*!/*/}
+                            {/*    /!*    </SearchIconWrapper>*!/*/}
+                            {/*    /!*    <StyledInputBase*!/*/}
+                            {/*    /!*        placeholder="Search…"*!/*/}
+                            {/*    /!*        inputProps={{ 'aria-label': 'search' }}*!/*/}
+                            {/*    /!*    />*!/*/}
+                            {/*    /!*</Search>*!/*/}
+                            {/*</Grid>*/}
                         </Grid>
                         <Drawer
                             variant="temporary"
@@ -111,41 +120,13 @@ const ResponsiveHeader = () => {
                         </Drawer>
                     </Hidden>
                     <Hidden mdDown>
-                        <Button color="inherit">Students</Button>
-                        <Button color="inherit">Faculty</Button>
+                        <Button color="inherit">Университеты</Button>
+                        <Button color="inherit">Поступление</Button>
                         <Button color="inherit">Staff</Button>
                         <Button color="inherit">Alumni</Button>
                     </Hidden>
                 </Toolbar>
             </AppBar>
-            <Hidden mdDown>
-                <AppBar position="static" style={{ backgroundColor: '#003366' }}>
-                    <Toolbar>
-                        <Box display="flex" flexGrow={1} justifyContent="center" alignItems="center">
-                            <Typography variant="h3" style={{ marginRight: 10 }}>
-                                Duke
-                            </Typography>
-                        </Box>
-                        <Box display="flex" flexGrow={1} justifyContent="center">
-                            {['ADMISSIONS', 'ACADEMICS', 'RESEARCH', 'GLOBAL', 'ARTS', 'SCHOOLS & INSTITUTES'].map((text) => (
-                                <Typography variant="h6" style={{ marginRight: 30 }} key={text}>
-                                    {text}
-                                </Typography>
-                            ))}
-                        </Box>
-                        <Search>
-                            <SearchIconWrapper>
-                                <SearchIcon />
-                            </SearchIconWrapper>
-                            <StyledInputBase
-                                placeholder="Search…"
-                                inputProps={{ 'aria-label': 'search' }}
-                            />
-                        </Search>
-                    </Toolbar>
-                </AppBar>
-            </Hidden>
-        </div>
     );
 };
 

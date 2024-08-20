@@ -1,0 +1,15 @@
+.scroll-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100vh;
+    background-color: #e0e0e0; /* Цвет фона полосы */
+    z-index: 9999; /* Высокий z-index, чтобы полоска была поверх других элементов */
+}
+
+.scroll-progress {
+    width: 100%;
+    background-color: #3f51b5; /* Цвет прогресса */
+    transition: height 0.1s ease-in-out;
+}

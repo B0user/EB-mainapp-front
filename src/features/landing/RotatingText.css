@@ -1,0 +1,54 @@
+.rotating-text-wrapper {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.parent-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Центрирование по вертикали */
+    background-color: #f0f0f0; /* Опционально: можно добавить фон */
+}
+
+.centered-text {
+    text-align: center;
+    margin-bottom: 70px; /* Отступ от текста до анимации */
+    font-size: 24px;
+
+}
+
+.rotating-text-circle {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    animation: rotate 70s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rotating-text-circle span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform-origin: 0 200px;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
